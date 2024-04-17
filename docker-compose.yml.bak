@@ -17,7 +17,7 @@ services:
       - SESSION_SECRET=random_string  # 修改为随机字符串
       - TZ=Asia/Shanghai
 #      - NODE_TYPE=slave  # 多机部署时从节点取消注释该行
-      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
+#      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
 #      - FRONTEND_BASE_URL=https://openai.justsong.cn  # 多机部署时从节点取消注释该行
     depends_on:
       - redis
@@ -43,34 +43,7 @@ services:
       - '3306:3306'
     environment:
       TZ: Asia/Shanghai   # 设置时区
-      MYSQL_ROOT_PASSWORD: 'Xhi6@8?El9b%m!o~0' # 设置 root 用户的密码
+      MYSQL_ROOT_PASSWORD: 'OneAPI@justsong' # 设置 root 用户的密码
       MYSQL_USER: oneapi   # 创建专用用户
       MYSQL_PASSWORD: '123456'    # 设置专用用户密码
       MYSQL_DATABASE: one-api   # 自动创建数据库
-  gpt4free:
-    # 非星球用户请使用此镜像 xiangsx/gpt4free-ts:latest
-    # 星球用户请使用此镜像 gpt4freets/gpt4free-ts:v0.0.192-private
-    image: xiangsx/gpt4free-ts:latest
-    container_name: gpt4free-ts
-    ports:
-      - "3001:3000"
-    restart: always
-    volumes:
-      - ./run:/usr/src/app/run
-      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
-    env_file:
-      #- 'env/.env'
-      - 'env/proxy.env'
-      - 'env/gpt4free.env'
-  clash:
-    image: dreamacro/clash
-    container_name: clash
-    volumes:
-      - ./clash/config.yaml:/root/.config/clash/config.yaml
-      - ./clash/profiles:/root/.config/clash/profiles
-    ports:
-      - "7890:7890"
-      - "9090:9090" # external controller (Restful API)
-    restart: always
-    env_file:
-      #- './env/.env'

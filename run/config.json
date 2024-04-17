@@ -1,0 +1,165 @@
+{
+  "proxy_pool": {
+    "enable": false,
+    "stable_proxy_list": [
+      "http://xxx"
+    ],
+    "proxy_list": [
+      "http://xxx"
+    ]
+  },
+  "www": {
+    "size": 1,
+    "serial": 1
+  },
+  "ddg": {
+    "size": 1,
+    "serial": 1
+  },
+  "freegpt35": {
+    "size": 1,
+    "serial": 1
+  },
+  "freegpt4": {
+    "size": 0,
+    "serial": 1,
+    "mail_type": "tempmail-lol"
+  },
+  "airoom": {
+    "size": 0,
+    "serial": 1
+  },
+  "poevip": {
+    "size": 0,
+    "serial": 1,
+    "pb_list": [
+      {
+        "pb": "xxxxx",
+        "lat": "xxxxx"
+      }
+    ]
+  },
+  "gemini": {
+    "size": 0,
+    "serial": 1,
+    "apikeys": [
+      "xxx",
+      "xxx"
+    ]
+  },
+  "askx": {
+    "size": 0,
+    "serial": 1,
+    "mail_type": "tempmail-lol"
+  },
+  "poeauto": {
+    "size": 1,
+    "mail_type": "smail-pro"
+  },
+  "phind": {
+    "size": 0,
+    "serial": 1,
+    "mail_type": "tempmail-lol"
+  },
+  "merlin": {
+    "size": 0,
+    "mailType": "yopmail"
+  },
+  "navit": {
+    "size": 0,
+    "mailType": "tempmail-lol"
+  },
+  "perplexity": {
+    "size": 0,
+    "concurrency": 8,
+    "tokens": [
+      "xxxxx"
+    ]
+  },
+  "langdock": {
+    "size": 0
+  },
+  "sincode": {
+    "size": 0,
+    "concurrency": 1,
+    "accounts": [
+      {
+        "email": "xxxxx@xx.com",
+        "password": "xxxxxxx"
+      }
+    ]
+  },
+  "openai": {
+    "token_limit": {
+      "gpt-3.5-turbo": 2500,
+      "gpt-3.5-turbo-16k": 10000,
+      "gpt-4": 8000
+    }
+  },
+  "site_map": {
+    "search": [
+      {
+        "site": "ddg",
+        "priority": 10
+      }
+    ],
+    "url": [
+      {
+        "site": "www",
+        "priority": 10
+      }
+    ],
+    "gpt-4-32k": [
+      {
+        "site": "openai",
+        "api_key": "sk-xxxxxxxxxxxxxxxx",
+        "priority": 10,
+        "proxy": true,
+        "base_url": "http://base_url:port",
+        "model_map": {
+          "gpt-4-32k": "gpt-4"
+        }
+      }
+    ],
+    "gpt-4": [
+      {
+        "site": "phind",
+        "priority": 10
+      }
+    ],
+    "gpt-3.5-turbo-16k": [
+      {
+        "site": "airoom",
+        "priority": 10
+      }
+    ],
+    "gpt-4-1106-preview": [
+      {
+        "site": "airoom",
+        "priority": 10
+      }
+    ],
+    "gpt-3.5-turbo": [
+      {
+        "site": "poeauto",
+        "priority": 10
+      },
+      {
+        "site": "phind",
+        "priority": 5
+      }
+    ]
+  },
+  "gmail_list": [
+    {
+      "email": "xxx@gmail.com",
+      "password": "xxxxx",
+      "recovery_email": "xxxx@xxx.com"
+    },
+    {
+      "email": "xxx@gmail.com",
+      "password": "xxxxx",
+      "recovery_email": "xxxx@xxx.com"
+    }
+  ]
+}
